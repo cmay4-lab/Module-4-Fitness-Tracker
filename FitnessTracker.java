@@ -61,6 +61,4 @@ public class FitnessTracker {
         FitnessTracker.caloriesBurned = caloriesBurned;
         FitnessTracker.heartRate = heartRate;
     }
-
-
 }
