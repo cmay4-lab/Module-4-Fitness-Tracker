@@ -1,13 +1,13 @@
 public class FitnessTracker {
     // public properties (constants)
-    static final double kilometersPerStep = 0.000762;
-    static final double caloriesPerStep = 0.04;
+    public static final double kilometersPerStep = 0.000762;
+    public static final double caloriesPerStep = 0.04;
     // Private properties
-    static private String userName;
-    static private int dailySteps;
-    static private double distanceWalked;
-    static private double caloriesBurned;
-    static private int heartRate;
+    private static String userName;
+    private static int dailySteps;
+    private static double distanceWalked;
+    private static double caloriesBurned;
+    private static int heartRate;
 
     // userName
     public static String getUserName() {
