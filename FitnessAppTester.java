@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class FitnessAppTester {
 
+    // Updating
     private static void addSteps(int steps) {
 
     }
@@ -18,11 +19,12 @@ public class FitnessAppTester {
 
     }
 
+    // Resetting
     private static void resetDailyStats() {
 
     }
 
-    // toString method
+    // toString method already exists.
 
     private static void setGoalSteps(int goalSteps) {
 
@@ -32,75 +34,85 @@ public class FitnessAppTester {
 
     }
 
-    private static void validateCustomStat(String userInput, String inputType, Scanner input) {
-        switch (inputType) {
-            case "String":
+    /* Deprecated Code 
+    // private static void validateCustomStat(String userInput, String inputType, Scanner input) {
+    //     switch (inputType) {
+    //         case "String":
 
-                String userInputString = input.nextLine();
+    //             String userInputString = input.nextLine();
 
-                break;
-            case "int":
+    //             break;
+    //         case "int":
 
-                input.nextLine();
-                System.out.print("...\n");
+    //             input.nextLine();
+    //             System.out.print("...\n");
 
-                while (!input.hasNextInt()) {
-                    System.out.print("Invalid input!\n");
-                    System.out.print("Enter Username: ");
-                    input.nextLine();
+    //             while (!input.hasNextInt()) {
+    //                 System.out.print("Invalid input!\n");
+    //                 System.out.print("Enter valid input: ");
+    //                 input.nextLine();
                     
-                    System.out.print("...\n");
-                }
+    //                 System.out.print("...\n");
+    //             }
 
-                int userInputInt = input.nextInt();
+    //             int userInputInt = input.nextInt();
 
-                break;
-            case "double":
+    //             break;
+    //         case "double":
 
-                input.nextLine();    
+    //             input.nextLine();    
 
-                while (!input.hasNextDouble()) {
-                    input.nextLine();
-                }
+    //             while (!input.hasNextDouble()) {
+    //                 input.nextLine();
+    //             }
 
-                double userInputDouble = input.nextDouble();
-        }
-    }
+    //             double userInputDouble = input.nextDouble();
+    //     }
+    // }
+    */
 
     public static void main(String[] args) {
-        // Declare an scanner object for input.
-        @SuppressWarnings("resource")
-        Scanner input = new Scanner(System.in);
+        // Declare objects:
+        Scanner input = new Scanner(System.in);     // Obtains input
+        FitnessTracker user = new FitnessTracker(); // Retains fitness data 
+
+        // Explain operations that updates, resets, and retrieves data for "user" object.
+        System.out.print("\n\nThis program's main purpose is to allow the user to test FitnessTracker.java to see if it works properly.\n");
+        System.out.print("This includes updating, reseting, and retrieving the data from a object.\n");
+        System.out.print("Here is a list of testing methods you can perform. Perform dianostics to your liking:\n\n");
+        // Operations list
+        System.out.print("");
+
+        FitnessTracker.user.toString();
+
+        /* Deprecated Code 
         // Ask user if they want get a fresh set of stats,
         // or if they want to input their own.
-        
-        System.out.print("\n\nStarting Program...\n");
-        System.out.print("Do you want to input custom stats or maintain default?\n");
-        System.out.print("Enter either 'default' or 'custom': ");
+        // System.out.print("Do you want to input custom stats or maintain default?\n");
+        // System.out.print("Enter either 'default' or 'custom': ");
 
-        String userInput = input.nextLine();
-        System.out.print("...\n");
+        // String userInput = input.nextLine();
+        // System.out.print("...\n");
 
-        // Validate:
-        while (userInput != "default" && userInput != "custom") {
-            System.out.print("Invalid answer!\n");
-            System.out.print("Do you want to input custom stats or maintain default?\n");
-            System.out.print("Enter either 'default' or 'custom': ");
+        // // Validate:
+        // while (userInput != "default" && userInput != "custom") {
+        //     System.out.print("Invalid answer!\n");
+        //     System.out.print("Do you want to input custom stats or maintain default?\n");
+        //     System.out.print("Enter either 'default' or 'custom': ");
 
-            userInput = input.nextLine();
-            System.out.print("...\n");
-        }
+        //     userInput = input.nextLine();
+        //     System.out.print("...\n");
+        // }
 
-        System.out.print("\n\n");
+        // System.out.print("\n\n");
 
-        if (userInput == "No") {
-            new FitnessTracker();
-        } else {
-            //userName, dailySteps, distanceWalked, caloriesBurned, heartRate
-            System.out.print("Enter Username: ");
-            validateCustomStat(userInput, "String");
-
-        }
-
+        // if (userInput == "No") {
+        //     new FitnessTracker();
+        // } else {
+        //     userName, dailySteps, distanceWalked, caloriesBurned, heartRate
+        //     System.out.print("Enter Username: ");
+        //     validateCustomStat(userInput, "String", input);
+        // }
+         */
     }
 }

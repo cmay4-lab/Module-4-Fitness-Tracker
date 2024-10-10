@@ -3,62 +3,63 @@ public class FitnessTracker {
     public static final double kilometersPerStep = 0.000762;
     public static final double caloriesPerStep = 0.04;
     // Private properties
-    private static String userName;
-    private static int dailySteps;
-    private static double distanceWalked;
-    private static double caloriesBurned;
-    private static int heartRate;
+    private String name;
+    private int dailySteps;
+    private double distanceWalked;
+    private double caloriesBurned;
+    private int heartRate;
+    
 
     // userName
-    public static String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
-    public static void setUserName(String userName) {
-        FitnessTracker.userName = userName;
+    public void setName(String userName) {
+        name = userName;
     }
     // dailySteps
-    public static int getDailySteps() {
+    public int getDailySteps() {
         return dailySteps;
     }
-    public static void setDailySteps(int dailySteps) {
-        FitnessTracker.dailySteps = dailySteps;
+    public void setDailySteps(int userDailySteps) {
+        dailySteps = userDailySteps;
     }
     // distanceWalked
-    public static double getDistanceWalked() {
+    public double getDistanceWalked() {
         return distanceWalked;
     }
-    public static void setDistanceWalked(double distanceWalked) {
-        FitnessTracker.distanceWalked = distanceWalked;
+    public void setDistanceWalked(double userDistanceWalked) {
+        distanceWalked = userDistanceWalked;
     }
     // caloriesBurned
-    public static double getCaloriesBurned() {
+    public double getCaloriesBurned() {
         return caloriesBurned;
     }
-    public static void setCaloriesBurned(double caloriesBurned) {
-        FitnessTracker.caloriesBurned = caloriesBurned;
+    public void setCaloriesBurned(double userCaloriesBurned) {
+        caloriesBurned = userCaloriesBurned;
     }
     // heartRate
-    public static int getHeartRate() {
+    public int getHeartRate() {
         return heartRate;
     }
-    public static void setHeartRate(int heartRate) {
-        FitnessTracker.heartRate = heartRate;
+    public void setHeartRate(int userHeartRate) {
+        heartRate = userHeartRate;
     }
 
     // Default Constructor
     public FitnessTracker() {
-        userName = "";
+        name = "";
         dailySteps = 0;
         distanceWalked = 0;
         caloriesBurned = 0;
         heartRate = 0;
     }
     // Parameter Constructor (when properties are known)
-    public FitnessTracker(String userName, int dailySteps, double distanceWalked, double caloriesBurned, int heartRate) {
-        FitnessTracker.userName = userName;
-        FitnessTracker.dailySteps = dailySteps;
-        FitnessTracker.distanceWalked = distanceWalked;
-        FitnessTracker.caloriesBurned = caloriesBurned;
-        FitnessTracker.heartRate = heartRate;
+    public FitnessTracker(String userName, int userDailySteps, double userDistanceWalked, double userCaloriesBurned, int userHeartRate) {
+        name = userName;
+        dailySteps = userDailySteps;
+        distanceWalked = userDistanceWalked;
+        caloriesBurned = userCaloriesBurned;
+        heartRate = userHeartRate;
     }
 }
