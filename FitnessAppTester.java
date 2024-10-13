@@ -9,7 +9,7 @@ public class FitnessAppTester {
 
     /**
      * 
-     * addSteps --- Adds steps to the daily step field.
+     * addSteps --- Adds steps to the dailySteps field.
      * @param       steps
      * @param       fitnessTracker
      * @return      No return value.
@@ -45,6 +45,12 @@ public class FitnessAppTester {
         
     }
 
+    /**
+     * 
+     * calculateCalories --- Calculates the updated calories burned to set it into the CaloriesBurned field.
+     * @param                fitnessTracker
+     * @return               No return value.
+     */
     private static void calculateCalories(FitnessTracker fitnessTracker) {
 
         double pastCalorieBurned = fitnessTracker.getCaloriesBurned();
@@ -58,6 +64,13 @@ public class FitnessAppTester {
 
     }
 
+    /**
+     * 
+     * updateHeartRate --- Updates the heartRate field to the given heart rate.
+     * @param              newHeartRate
+     * @param              fitnessTracker
+     * @return             No return value.
+     */
     private static void updateHeartRate(int newHeartRate, FitnessTracker fitnessTracker) {
 
         fitnessTracker.setHeartRate(newHeartRate);
@@ -68,6 +81,12 @@ public class FitnessAppTester {
 
     }
 
+    /**
+     * 
+     * resetDailyStats --- Sets the fields daily steps, distance walked, and calories burned back to 0. 
+     * @param              fitnessTracker
+     * @return             No return value.
+     */
     private static void resetDailyStats(FitnessTracker fitnessTracker) {
 
         fitnessTracker.setDailySteps(0);
@@ -86,6 +105,12 @@ public class FitnessAppTester {
 
     }
 
+    /**
+     * 
+     * setGoalSteps --- Sets a daily step goal for the user to reach. 
+     * @param           goalSteps
+     * @return          No return value.
+     */
     private static void setGoalSteps(int goalSteps) {
      
         FitnessAppTester.currentGoalSteps = goalSteps;
@@ -95,6 +120,13 @@ public class FitnessAppTester {
 
     }
 
+    /**
+     * 
+     * checkGoal --- Checks whether the daily steps goal was reached yet. If so, it prints a congratulatory statement to the user's terminal.
+     *               Else, it tells the user that they have not reach their goal through the terminal. 
+     * @param        fitnessTracker
+     * @return       No return value.
+     */
     private static void checkGoal(FitnessTracker fitnessTracker) {
 
         int currentStepGoal = FitnessAppTester.currentGoalSteps;
@@ -108,74 +140,97 @@ public class FitnessAppTester {
 
     }
 
+    /**
+     * 
+     * main --- Uses all methods of the FitnessAppTester to test out the FitnessTracker class.
+     *          Also, utilizes all features of the FitnessTracker class in a organized immersive way to emulate a real fitness tracker.  
+     * @param   args
+     * @return  No return value.
+     */
     public static void main(String[] args) {
 
-        System.out.print("\n\n");
+        System.out.print("\n\n");                                     // Prints new lines to distingush where the console's preconfigurations end and where the main method begins.
+        System.out.print("Text Constants: ");                         // Prints basic header.
+        System.out.print(FitnessTracker.kilometersPerStep + "\n");      // Prints and test the FitnessTracker constant property: kilometersPerStep.
+        System.out.print(FitnessTracker.caloriesPerStep + "\n");        // Prints and test the FitnessTracker constant property: caloriesPerSteps.
 
-        //
-        System.out.print("Text Constants: ");
-        System.out.print(FitnessTracker.kilometersPerStep + "\n");
-        System.out.print(FitnessTracker.caloriesPerStep + "\n");
+        // The main idea behind this next section is that the tests simulate an imaginary user using their fitness tracker
+        // This is the 1st user, and this is their 1st day.
 
-        
-        //
-
-        //
-        FitnessTracker fitnessTracker = new FitnessTracker();
-        //
-
-        //
-        fitnessTracker.setName("Larry123");
+        FitnessTracker fitnessTracker = new FitnessTracker();       // Instantiates a blank FitnessTracker object to test the default constructor.
     
-        //
-        setGoalSteps(5000);
-        System.out.print("\n\n");
+        fitnessTracker.setName("Larry123");     // Tests the username setter method from the FitnessTracker class. 
+    
+        setGoalSteps(5000);                            // Simulate the imaginary user's daily step goal with the setGoalSteps test method. 
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
         
-        addSteps(3102, fitnessTracker);
-        System.out.print("\n\n");
+        addSteps(3102, fitnessTracker);                    // Simulate the added number of steps from imaginary user with the addSteps test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
         
-        calculateDistance(fitnessTracker);
-        System.out.print("\n\n");
+        calculateDistance(fitnessTracker);                       // Simulate the change in distance from walking with the calculateDistance test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
         
-        calculateCalories(fitnessTracker);
-        System.out.print("\n\n");
+        calculateCalories(fitnessTracker);                       // Simulate the change in calories from walking with the calculateCalories test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
         
-        updateHeartRate(110, fitnessTracker);
-        System.out.print("\n\n");
+        updateHeartRate(110, fitnessTracker);       // Simulate the change in heart rate from walking with the updateHeartRate test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        //
-        fitnessTracker.toString();
-        System.out.print("\n\n");
+        fitnessTracker.toString();                               // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        checkGoal(fitnessTracker);
-        System.out.print("\n\n");
+        checkGoal(fitnessTracker);                               // Simulate the info the imaginary user sees when they check their progress to their tracker's daily step goal.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        //
-        resetDailyStats(fitnessTracker);
-        System.out.print("\n\n");
+        resetDailyStats(fitnessTracker);                         // Resets the daily statistics at the imaginary midnight/end of day back to 0 with the resetDailyStats method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        //
-        addSteps(5219, fitnessTracker);
-        System.out.print("\n\n");
+        // This is the 1st user on their 2nd day.
+
+        addSteps(5219, fitnessTracker);                    // Simulate the added number of steps from imaginary user with the addSteps test method. 
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
         
-        calculateDistance(fitnessTracker);
-        System.out.print("\n\n");
+        calculateDistance(fitnessTracker);                       // Simulate the change in distance from walking with the calculateDistance test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
         
-        calculateCalories(fitnessTracker);
-        System.out.print("\n\n");
+        calculateCalories(fitnessTracker);                       // Simulate the change in calories from walking with the calculateCalories test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
         
-        updateHeartRate(96, fitnessTracker);
-        System.out.print("\n\n");
+        updateHeartRate(96, fitnessTracker);        // Simulate the change in heart rate from walking with the updateHeartRate test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        //
-        fitnessTracker.toString();
-        System.out.print("\n\n");
+        fitnessTracker.toString();                               // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        checkGoal(fitnessTracker);
-        System.out.print("\n\n");
+        checkGoal(fitnessTracker);                               // Simulate the info the imaginary user sees when they check their progress to their tracker's daily step goal.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        //
-        resetDailyStats(fitnessTracker);
-        System.out.print("\n\n");
+        resetDailyStats(fitnessTracker);                         // Resets the daily statistics at the imaginary midnight/end of day back to 0 with the resetDailyStats method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
+
+        // This is the 2nd user on their 1st day.
+
+        FitnessTracker fitnessTracker2 = new FitnessTracker();      // Instantiates a filled out FitnessTracker object to test the parameterized constructor.
+
+        addSteps(2954, fitnessTracker2);                   // Simulate the added number of steps from imaginary user with the addSteps test method. 
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
+        
+        calculateDistance(fitnessTracker2);                      // Simulate the change in distance from walking with the calculateDistance test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
+        
+        calculateCalories(fitnessTracker2);                      // Simulate the change in calories from walking with the calculateCalories test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
+        
+        updateHeartRate(124, fitnessTracker2);      // Simulate the change in heart rate from walking with the updateHeartRate test method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
+
+        fitnessTracker2.toString();                              // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
+
+        checkGoal(fitnessTracker2);                              // Simulate the info the imaginary user sees when they check their progress to their tracker's daily step goal.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
+
+        resetDailyStats(fitnessTracker2);                        // Resets the daily statistics at the imaginary midnight/end of day back to 0 with the resetDailyStats method.
+        System.out.print("\n\n");                              // Spaces out simulator/test operations.
     }
 }
