@@ -77,7 +77,7 @@ public class FitnessAppTester {
 
         System.out.print("Test 4: updating the heart rate...\n");
         System.out.print("The FitnessTracker object has a property: heartRate.\n");
-        System.out.print("However, after an update, the user's new 'calories burned' is... " + newHeartRate + "beats per minute.");
+        System.out.print("However, after an update, the user's new 'heart rate' is... " + newHeartRate + " beats per minute.");
 
     }
 
@@ -103,6 +103,24 @@ public class FitnessAppTester {
         System.out.print("Total distance walked is now equal to... " + newDistanceWalked + " km." + "\n");
         System.out.print("Total calories burned is now equal to... " + newCaloriesBurned + " calories.");
 
+    }
+
+    private static void toString(FitnessTracker fitnessTracker) {
+        System.out.print("Fitness Tracker Daily Stats:\n");
+
+        System.out.print("\t" + "* Username: " + fitnessTracker.getName());
+        System.out.print("\n");
+
+        System.out.print("\t" + "* Steps: " + fitnessTracker.getDailySteps() + " steps");
+        System.out.print("\n");
+
+        System.out.print("\t" + "* Distance Walked: " + fitnessTracker.getDistanceWalked() + " km");
+        System.out.print("\n");
+
+        System.out.print("\t" + "* Calories Burned: " + fitnessTracker.getCaloriesBurned() + " calories");
+        System.out.print("\n");
+
+        System.out.print("\t" + "* Heart Rate: " + fitnessTracker.getHeartRate() + " bpm");
     }
 
     /**
@@ -176,7 +194,7 @@ public class FitnessAppTester {
         updateHeartRate(110, fitnessTracker);       // Simulate the change in heart rate from walking with the updateHeartRate test method.
         System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        fitnessTracker.toString();                               // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
+        toString(fitnessTracker);                                // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
         System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
         checkGoal(fitnessTracker);                               // Simulate the info the imaginary user sees when they check their progress to their tracker's daily step goal.
@@ -199,7 +217,7 @@ public class FitnessAppTester {
         updateHeartRate(96, fitnessTracker);        // Simulate the change in heart rate from walking with the updateHeartRate test method.
         System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        fitnessTracker.toString();                               // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
+        toString(fitnessTracker);                                // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
         System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
         checkGoal(fitnessTracker);                               // Simulate the info the imaginary user sees when they check their progress to their tracker's daily step goal.
@@ -210,7 +228,7 @@ public class FitnessAppTester {
 
         // This is the 2nd user on their 1st day.
 
-        FitnessTracker fitnessTracker2 = new FitnessTracker();      // Instantiates a filled out FitnessTracker object to test the parameterized constructor.
+        FitnessTracker fitnessTracker2 = new FitnessTracker("Harry456", 10736, 8.180832, 429.44, 86);      // Instantiates a filled out FitnessTracker object to test the parameterized constructor.
 
         addSteps(2954, fitnessTracker2);                   // Simulate the added number of steps from imaginary user with the addSteps test method. 
         System.out.print("\n\n");                              // Spaces out simulator/test operations.
@@ -224,7 +242,7 @@ public class FitnessAppTester {
         updateHeartRate(124, fitnessTracker2);      // Simulate the change in heart rate from walking with the updateHeartRate test method.
         System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
-        fitnessTracker2.toString();                              // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
+        toString(fitnessTracker2);                               // Simulate the info the imaginary user sees when they check their stats at the end of the day with the toString method.
         System.out.print("\n\n");                              // Spaces out simulator/test operations.
 
         checkGoal(fitnessTracker2);                              // Simulate the info the imaginary user sees when they check their progress to their tracker's daily step goal.
