@@ -21,9 +21,9 @@ public class FitnessAppTester {
 
         fitnessTracker.setDailySteps(newStepCount);            // Sets the dailySteps field of fitnessTracker to equal newStepCount. 
 
-        System.out.print("\n\nTest 1: adding steps to past step count...\n");
-        System.out.print("The FitnessTracker object has a property: dailySteps. From which, the user had... " + pastStepCount + "\n");
-        System.out.print("However, after an update, the user's new step count is... " + newStepCount);
+        System.out.print("Test 1: adding steps to past step count...\n");
+        System.out.print("The FitnessTracker object has a property: dailySteps. From which, the user had... " + pastStepCount + " steps." + "\n");
+        System.out.print("However, after an update, the user's new step count is... " + newStepCount + " steps.");
     }
 
     /**
@@ -40,8 +40,8 @@ public class FitnessAppTester {
         fitnessTracker.setDistanceWalked(newDistance);
 
         System.out.print("Test 2: calcuating the distance walked in kilometers from the number of steps walked...\n");
-        System.out.print("The FitnessTracker object has a property: distanceWalked. From which, the user had... " + pastDistance + "km" + "\n");
-        System.out.print("However, after an update, the user's new 'distance walked' is... " + newDistance + "km");
+        System.out.print("The FitnessTracker object has a property: distanceWalked. From which, the user had... " + pastDistance + " km." + "\n");
+        System.out.print("However, after an update, the user's new 'distance walked' is... " + newDistance + " km.");
         
     }
 
@@ -59,8 +59,8 @@ public class FitnessAppTester {
         fitnessTracker.setCaloriesBurned(newCaloriesBurned);
 
         System.out.print("Test 3: calculating the calories burned from the number of steps walked...\n");
-        System.out.print("The FitnessTracker object has a property: caloriesBurned. From which, the user had... " + pastCalorieBurned + "Calories." + "\n");
-        System.out.print("However, after an update, the user's new 'calories burned' is... " + newCaloriesBurned + "Calories.");
+        System.out.print("The FitnessTracker object has a property: caloriesBurned. From which, the user had... " + pastCalorieBurned + " calories." + "\n");
+        System.out.print("However, after an update, the user's new 'calories burned' is... " + newCaloriesBurned + " calories.");
 
     }
 
@@ -77,7 +77,7 @@ public class FitnessAppTester {
 
         System.out.print("Test 4: updating the heart rate...\n");
         System.out.print("The FitnessTracker object has a property: heartRate.\n");
-        System.out.print("However, after an update, the user's new 'calories burned' is... " + newHeartRate + "Beats Per Minute.");
+        System.out.print("However, after an update, the user's new 'calories burned' is... " + newHeartRate + "beats per minute.");
 
     }
 
@@ -99,9 +99,9 @@ public class FitnessAppTester {
 
      
         System.out.print("Resetting daily stats:\n");
-        System.out.print("Daily steps is now equal to... " + newDailySteps + "\n");
-        System.out.print("Total distance walked is now equal to... " + newDistanceWalked + "\n");
-        System.out.print("Total calories burned is now equal to... " + newCaloriesBurned);
+        System.out.print("Daily steps is now equal to... " + newDailySteps + " steps." + "\n");
+        System.out.print("Total distance walked is now equal to... " + newDistanceWalked + " km." + "\n");
+        System.out.print("Total calories burned is now equal to... " + newCaloriesBurned + " calories.");
 
     }
 
@@ -116,7 +116,7 @@ public class FitnessAppTester {
         FitnessAppTester.currentGoalSteps = goalSteps;
 
         System.out.print("Current goal has been updated!\n");
-        System.out.print("Your new current goal is... " + currentGoalSteps);
+        System.out.print("Your new current goal is... " + currentGoalSteps + " steps.");
 
     }
 
@@ -150,9 +150,9 @@ public class FitnessAppTester {
     public static void main(String[] args) {
 
         System.out.print("\n\n");                                     // Prints new lines to distingush where the console's preconfigurations end and where the main method begins.
-        System.out.print("Text Constants: ");                         // Prints basic header.
+        System.out.print("Text Constants: \n");                         // Prints basic header.
         System.out.print(FitnessTracker.kilometersPerStep + "\n");      // Prints and test the FitnessTracker constant property: kilometersPerStep.
-        System.out.print(FitnessTracker.caloriesPerStep + "\n");        // Prints and test the FitnessTracker constant property: caloriesPerSteps.
+        System.out.print(FitnessTracker.caloriesPerStep + "\n\n");        // Prints and test the FitnessTracker constant property: caloriesPerSteps.
 
         // The main idea behind this next section is that the tests simulate an imaginary user using their fitness tracker
         // This is the 1st user, and this is their 1st day.
